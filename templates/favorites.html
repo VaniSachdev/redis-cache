@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Favorite Items</title>
+  </head>
+  <body>
+
+    <h1>Add a New Favorite Item</h1>
+    <form action="/add_favorite" method="post">
+      <label for="item">Item:</label>
+      <input type="text" id="item" name="item" required>
+      <button type="submit">Add</button>
+    </form>
+
+    <h1>Remove an Item </h1>
+    <form action="/remove_favorite" method="post">
+      <label for="item">Item:</label>
+      <input type="text" id="item" name="item" required>
+      <button type="submit">Remove</button>
+    </form>
+
+    
+    <h1>My Favorite Items</h1>
+    <ul>
+      {% for item in favorite_items %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>
